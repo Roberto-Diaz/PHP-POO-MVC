@@ -1,0 +1,5 @@
+<?php 
+
+const LBS = 'library/';
+
+?>
