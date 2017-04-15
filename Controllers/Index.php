@@ -4,9 +4,13 @@ class Index
 {
 
 	function __construct(){
-		echo "Mensaje desde el controlador";
+	
+	}
+
+	public function index()
+	{
+		require VIEWS."index.php";
 	}
 }
-
 
 ?>
