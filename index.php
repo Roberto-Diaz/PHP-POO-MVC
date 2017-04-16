@@ -57,7 +57,9 @@ $controller = new $controller();
 
 	if(isset($method)){
 		if(method_exists($controller, $method)){
-			//Nombre del metodo a utilizar dentro de la clase, ingresado desde la URL.
+			/*
+			Nombre del metodo a utilizar dentro de la clase, ingresado desde la URL.
+			*/
 			$controller->{$method}();
 		}
 		else
