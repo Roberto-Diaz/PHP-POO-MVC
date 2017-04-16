@@ -8,7 +8,7 @@
 
 <h3>Vista llamada por el metodo Index</h3>
 	<?php
-		var_dump($datos);
+		var_dump($dato);
 	?>
 </body>
 </html>

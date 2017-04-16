@@ -13,8 +13,9 @@ $url = isset($_GET["url"])?$_GET["url"]:"Index/index";
 $url = explode("/", $url);
 //var_dump($url);
 
-$controller="";
-$method= "";
+$controller = "";
+$method = 	"";
+$params = "";
 
 if(isset($url[0]))
 {
@@ -23,7 +24,18 @@ if(isset($url[0]))
 
 if(isset($url[1]))
 {
-	$method = $url[1];
+	if($url[1]!='')
+	{
+		$method = $url[1];
+	}	
+}
+
+if(isset($url[2]))
+{
+	if($url[1]!='')
+	{
+		$params = $url[2];
+	}
 }
 
 /*
@@ -55,12 +67,22 @@ require $controllersPath;
 //Se instancia la clase con el puro nombre
 $controller = new $controller();	
 
-	if(isset($method)){
-		if(method_exists($controller, $method)){
+	if(isset($method))
+	{
+		if(method_exists($controller, $method))
+		{
+
+			if(isset($params))
+			{
+				$controller->{$method}($params);
+			}
+			else
+			{
 			/*
 			Nombre del metodo a utilizar dentro de la clase, ingresado desde la URL.
 			*/
-			$controller->{$method}();
+				$controller->{$method}();
+			}
 		}
 		else
 		{
