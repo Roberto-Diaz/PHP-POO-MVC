@@ -4,17 +4,26 @@ class Controllers
 {
 
 	function __construct(){
+
+		/*
+		Se intancia la clase Views para que la clase controller
+		pueda cargar las vistas.
+		*/
+
+		$this->view = new Views();
 		$this->LoadClassModel();
 	}
 
 	/*
-	* La funcion LoadClassModel() tiene el objetivo de cargar todos los archivos dentro de la carpeta Model.
+	*
+	La funcion LoadClassModel() tiene el objetivo de cargar todos los archivos dentro de la carpeta Model.
 	*
 	*/
 
 	function LoadClassModel(){
 		/*
-		* Con la función get_class() se obtiene el 	nombre de la clase del objeto instanciado que se pase por parametro, en este caso $this toma el de la clase donde se invoque el metodo.
+		* 
+		Con la función get_class() se obtiene el 	nombre de la clase del objeto instanciado que se pase por parametro, en este caso $this toma el de la clase donde se invoque el metodo.
 		*/
 
 		$model = get_class($this).'_model';

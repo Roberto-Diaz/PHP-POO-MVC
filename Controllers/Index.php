@@ -2,10 +2,10 @@
 
 class Index extends Controllers
 {
-	public $response;
+	
 	function __construct()
 	{
-		$response="";
+	
 		//Se invoca al constructor de la clase padre.
 		parent::__construct();
 	}
@@ -13,33 +13,13 @@ class Index extends Controllers
 	public function index()
 	{
 		/*
-		al invocarse el metodo constructor de la clase padre, se carga los modelos
-		dentro la carpeta Models los cuales una vez cargados son instanciados para
-		poder hacer uso de metodos y propiedades.
+		Se realiza un llamado del objeto $this->view para poder haceder al metodo reder() el cual en el primer parametro toma el nombre de la clase con ayuda de get_class().
 		*/
-
-		$this->response = $this->model->datosPersonales();
-		$dato = $this->response;
-		require VIEWS."index.php";
+		
+		$this->view->render($this,'index');
 	}
 
-	public function index2($valor){
-		$dato = null;
-		$i = 0;
-		$this->response = $this->model->datosPersonales();
-		$datos = $this->response;
-		foreach($datos as $value)
-		{
-			if($datos[$i] == $datos[$valor])
-			{	
-				$dato = $datos[$i];
-			}
-			$i++;
-		}
 
-		require VIEWS.'index.php';
-
-	}
 }
 
 ?>
