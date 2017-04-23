@@ -8,7 +8,7 @@ devuleve el indixe.php si no hay datos con ayuda del .htaccess
 que esta maniputaldo las urls.
 *
 */
-$url = isset($_GET["url"])?$_GET["url"]:"Index/index";
+$url = isset($_GET["url"])?$_GET["url"]:null;
 
 $url = explode("/", $url);
 //var_dump($url);
@@ -93,8 +93,8 @@ $controller = new $controller();
 }
 else
 {
-	//require 'Controllers/'.$controller;
-	echo "No existe el controlador";
+	require VIEWS."Index/index.php";
+	//echo "No existe el controlador";
 }
 
 

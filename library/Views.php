@@ -11,9 +11,9 @@ class Views
 	{
 		$controllers = get_class($controller);
 
-		require VIEWS.DFT.'head.php';
+		require VIEWS.DFT."head.php";
 		require VIEWS.$controllers.'/'.$view.'.php';
-		require VIEWS.DFT.'footer.php';
+		require VIEWS.DFT."footer.php";
 	}
 }
 
